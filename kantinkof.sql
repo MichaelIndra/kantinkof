@@ -1,0 +1,736 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.11
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 22, 2017 at 09:42 AM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `kantinkof`
+--
+CREATE DATABASE IF NOT EXISTS `kantinkof` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `kantinkof`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `counter`
+--
+
+DROP TABLE IF EXISTS `counter`;
+CREATE TABLE IF NOT EXISTS `counter` (
+  `no` int(11) NOT NULL,
+  `invoice` varchar(20) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `counter`
+--
+
+INSERT INTO `counter` (`no`, `invoice`, `tanggal`) VALUES
+(1, 'KISS', '2017-06-18'),
+(1, 'KITA', '2017-06-04'),
+(40, 'KOF', '2017-06-11'),
+(5, 'YOUNGMAN', '2017-06-11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dagangan`
+--
+
+DROP TABLE IF EXISTS `dagangan`;
+CREATE TABLE IF NOT EXISTS `dagangan` (
+  `idsupp` varchar(15) NOT NULL,
+  `iddagang` varchar(30) NOT NULL,
+  `namadagang` varchar(25) NOT NULL,
+  `deskripsi` varchar(50) NOT NULL,
+  `komsel` varchar(1) NOT NULL,
+  `pok` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dagangan`
+--
+
+INSERT INTO `dagangan` (`idsupp`, `iddagang`, `namadagang`, `deskripsi`, `komsel`, `pok`) VALUES
+('ADI', 'ADI.KRPKBKR', 'KRUPUK BAKAR', 'KRUPUK BAKAR', 'F', 'F'),
+('AMOS', 'AMOS.PASTELBUNGA', 'PASTEL BUNGA', 'PASTEL BUNGA', 'F', 'F'),
+('AMOS', 'AMOS.RISOLES', 'RISOLES', 'RISOLES', 'F', 'F'),
+('GRACE', 'GRACE.PDKECLI', 'PUDING KECIL', 'PUDING KECIL', 'F', 'F'),
+('GRACE', 'GRACE.PDLOYANG', 'PUDING LOYANG', 'PUDING LOYANG', 'F', 'F'),
+('HADI', 'HADI.GALANTIN', 'GALANTIN', 'GALANTIN', 'F', 'F'),
+('HADI', 'HADI.KEKYAN', 'KEKYAN', 'KEKYAN', 'F', 'F'),
+('JOVINA', 'JOVINA.BACANG', 'BACANG', 'BACANG MERAH MANIS', 'F', 'F'),
+('JOVINA', 'JOVINA.BKSGORENG', 'BAKSO GORENG', 'BAKSO GORENG AYAM', 'F', 'F'),
+('JOVINA', 'JOVINA.BKSKAKAP', 'BAKSO KAKAP', 'BAKSO KAKAP', 'F', 'F'),
+('JOVINA', 'JOVINA.SIOMAY', 'SIOMAY ', 'SIOMAY AYAM', 'F', 'F'),
+('JOVINA', 'JOVINA.SOSISKUAH', 'SOSIS KUAH', 'SOSIS KUAH', 'F', 'F'),
+('JOVINA', 'JOVINA.SPMANTEN', 'SOP MANTEN', 'SOP MANTEN', 'F', 'F'),
+('JOVINA', 'JOVINA.SPSOSIS', 'SOP SOSIS', 'SOP SOSIS DULU PAKE BABI SEKARANG ENGGA', 'F', 'F'),
+('KREMES', 'KREMES.KREMES', 'KREMES', 'KREMES', 'F', 'F'),
+('LACY', 'LACY.CWIEMIE', 'CWIE MIE', 'CWIE MIE', 'F', 'F'),
+('LACY', 'LACY.NSLEMAK', 'NASI LEMAK', 'NASI LEMAK ASLI MALAYSIA', 'F', 'F'),
+('MANNA', 'MANNA.BLRAINBOW', 'BOLU RAINBOW', 'BOLU RAINBOW', 'F', 'F'),
+('MANNA', 'MANNA.LEMPER', 'LEMPER', 'LEMPER', 'F', 'F'),
+('MANNA', 'MANNA.RISOLES', 'RISOLES', 'RISOLES', 'F', 'F'),
+('MANNA', 'MANNA.ROTIBAKSO', 'ROTI BAKSO', 'ROTI BAKSO', 'F', 'F'),
+('MANNA', 'MANNA.ROTIPISCOK', 'ROTI PISANG COKLAT', 'ROTI PISANG COKLAT', 'F', 'F'),
+('MANNA', 'MANNA.ROTIPISKEJ', 'ROTI PISANG KEJU', 'ROTI PISANG KEJU', 'F', 'F'),
+('MANNA', 'MANNA.RTAYAM', 'ROTI AYAM', 'ROTI AYAM', 'F', 'F'),
+('MANNA', 'MANNA.RTCOKLAT', 'ROTI COKLAT', 'ROTI COKLAT', 'F', 'F'),
+('MANNA', 'MANNA.RTKEJU', 'ROTI KEJU', 'ROTI KEJU', 'F', 'F'),
+('MANNA', 'MANNA.RTMANDARIN', 'ROTI MANDARIN', 'ROTI MANDARIN', 'F', 'F'),
+('MANNA', 'MANNA.SSFLA', 'SUS FLA', 'SUS FLA', 'F', 'F'),
+('MANNA', 'MANNA.SSRAGUT', 'SUS RAGUT', 'SUS RAGUT', 'F', 'F'),
+('MANNA', 'MANNA.SUSUCOKLAT', 'SUSU COKLAT', 'SUSU COKLAT', 'F', 'F'),
+('MANNA', 'MANNA.SUSUSIRUP', 'SUSU SIRUP', 'SUSU SIRUP', 'F', 'F'),
+('MANNA', 'MANNA.SUSUSTRAWBERRY', 'SUSU STRAWBERRY', 'SUSU STRAWBERRY', 'F', 'F'),
+('MARIA', 'MARIA.MISOA', 'MISOA', 'MISOA', 'F', 'F'),
+('MARIA', 'MARIA.NASI', 'NASI', 'NASI', 'F', 'F'),
+('MARLINA', 'MARLINA.EGGROLL', 'EGG ROLL', ' EGG ROLL', 'F', 'F'),
+('MBANGSA', 'MBANGSA.AMIDIS', 'AMIDIS', 'MINUMAN (FULL MENARA BANGSA)', 'F', 'T'),
+('MBANGSA', 'MBANGSA.MINUTEMAID', 'MINUTE MAID', 'MINUTE MAID(FULL MENARA BANGSA)', 'F', 'T'),
+('MBANGSA', 'MBANGSA.SIIPLAH', 'SIIPLAH', 'AQUA SIIPLAH (FULL MENAR BANGSA)', 'F', 'T'),
+('RAYS', 'RAYS.AYMPDS', 'AYAM PEDAS', 'AYAM PEDAS', 'F', 'F'),
+('RAYS', 'RAYS.BKSAYAM', 'BAKSO AYAM', 'BAKSO AYAM', 'F', 'F'),
+('RAYS', 'RAYS.BLZEBRA', 'BOLU ZEBRA', 'BOLU ZEBRA', 'F', 'F'),
+('RAYS', 'RAYS.PISCOK', 'ROTI PISANG COKLAT', 'ROTI PISANG COKLAT', 'F', 'F'),
+('RAYS', 'RAYS.RTABONAYAM', 'ROTI ABON AYAM', 'ROTI ABON AYAM', 'F', 'F'),
+('RAYS', 'RAYS.RTBKSO', 'ROTI BAKSO', 'ROTI BAKSO', 'F', 'F'),
+('RAYS', 'RAYS.RTCHIFON', 'ROTI CHIFON', 'ROTI CHIFON', 'F', 'F'),
+('RAYS', 'RAYS.RTCOKLAT', 'ROTI COKLAT', 'ROTI COKLAT', 'F', 'F'),
+('RAYS', 'RAYS.RTIPIZZA', 'ROTI PIZZA', 'ROTI PIZZA', 'F', 'F'),
+('RAYS', 'RAYS.RTPISCOKKEJ', 'ROTI PISANG KEJU COKLAT', 'ROTI PISANG KEJU COKLAT', 'F', 'F'),
+('RAYS', 'RAYS.RTSOSIS', 'ROTI SOSIS', 'ROTI SOSIS', 'F', 'F'),
+('RUDY', 'RUDY.KRPKKENTANG', 'KERIPIK KENTANG', 'KERIPIK KENTANG', 'F', 'F'),
+('RUMI', 'RUMI.KRPKTEMPE', 'KERIPIK TEMPE', 'KERIPIK TEMPE', 'F', 'F'),
+('SISKA', 'SISKA.MAKKEJU', 'MAKARONI KEJU', 'MAKARONI KEJU', 'F', 'F'),
+('SISKA', 'SISKA.MOCOVO', 'MOCHI OVOMALTINE', 'MOCHI OVOMALTINE', 'F', 'F'),
+('SISKA', 'SISKA.PDOREO', 'PUDING OREO', 'PUDING OREO', 'F', 'F'),
+('SISKA', 'SISKA.PDVANILA', 'PUDING VANILA', 'PUDING VANILA', 'F', 'F'),
+('TITIK', 'TITIK.BKWJAGUNG', 'BAKWAN JAGUNG', 'BAKWAN JAGUNG', 'F', 'F'),
+('TITIK', 'TITIK.LPTJAGUNG', 'LEPET JAGUNG', 'LEPET JAGUNG', 'F', 'F'),
+('TITIK', 'TITIK.MIEGOREN', 'MIE GORENG', 'MIE GORENG', 'F', 'F'),
+('YONATAN', 'YONATAN.NSGRTLR', 'NASI GORENG TELOR', 'NASI GORENG TELOR', 'F', 'F'),
+('YONATAN', 'YONATAN.NSRMS', 'NASI RAMES', 'NASI RAMES', 'F', 'F'),
+('YOS', 'YOS.EMPING', 'EMPING', '-', 'F', 'F'),
+('YOUNGMAN', 'YOUNGMAN.TEHMANIS', 'TEH MANIS', 'TEH MANIS BISA PAKAI ES ATAU TIDAK', 'T', 'F');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detailtransaksi`
+--
+
+DROP TABLE IF EXISTS `detailtransaksi`;
+CREATE TABLE IF NOT EXISTS `detailtransaksi` (
+  `notransaksi` varchar(35) NOT NULL,
+  `iddagang` varchar(30) NOT NULL,
+  `user` varchar(20) NOT NULL,
+  `totalbeli` int(11) NOT NULL,
+  `totalharga` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `komsel` varchar(1) NOT NULL,
+  `rekap` varchar(1) NOT NULL,
+  `pok` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `detailtransaksi`
+--
+
+INSERT INTO `detailtransaksi` (`notransaksi`, `iddagang`, `user`, `totalbeli`, `totalharga`, `tanggal`, `komsel`, `rekap`, `pok`) VALUES
+('001/miki/2017/06/11', 'HADI.GALANTIN', 'miki', 4, 180000, '2017-06-11', 'F', 'T', 'F'),
+('002/miki/2017/06/11', 'YOS.EMPING', 'miki', 0, 11000, '2017-06-11', 'F', 'T', 'F'),
+('003/miki/2017/06/11', 'AMOS.RISOLES', 'MIKI', 10, 25000, '2017-06-11', 'F', 'T', 'F'),
+('004/MIKI/2017/06/11', 'RUMI.KRPKTEMPE', 'MIKI', 4, 24000, '2017-06-11', 'F', 'T', 'F'),
+('005/MIKI/2017/06/11', 'GRACE.PDLOYANG', 'MIKI', 1, 30000, '2017-06-11', 'F', 'T', 'F'),
+('006/MIKI/2017/06/11', 'GRACE.PDKECLI', 'MIKI', 22, 62500, '2017-06-11', 'F', 'T', 'F'),
+('007/MIKI/2017/06/11', 'LACY.CWIEMIE', 'MIKI', 12, 168000, '2017-06-11', 'F', 'T', 'F'),
+('008/MIKI/2017/06/11', 'JOVINA.SPSOSIS', 'MIKI', 1, 23000, '2017-06-11', 'F', 'T', 'F'),
+('009/MIKI/2017/06/11', 'JOVINA.BKSKAKAP', 'MIKI', 1, 23000, '2017-06-11', 'F', 'T', 'F'),
+('010/MIKI/2017/06/11', 'JOVINA.SPMANTEN', 'MIKI', 3, 69000, '2017-06-11', 'F', 'T', 'F'),
+('011/MIKI/2017/06/11', 'JOVINA.BKSGORENG', 'MIKI', 28, 168000, '2017-06-11', 'F', 'T', 'F'),
+('012/MIKI/2017/06/11', 'JOVINA.SIOMAY', 'MIKI', 20, 120000, '2017-06-11', 'F', 'T', 'F'),
+('013/MIKI/2017/06/11', 'JOVINA.BACANG', 'MIKI', 16, 144000, '2017-06-11', 'F', 'T', 'F'),
+('014/MIKI/2017/06/11', 'RUDY.KRPKKENTANG', 'MIKI', 2, 25000, '2017-06-11', 'F', 'T', 'F'),
+('015/MIKI/2017/06/11', 'RAYS.RTIPIZZA', 'MIKI', 2, 26000, '2017-06-11', 'F', 'T', 'F'),
+('016/MIKI/2017/06/11', 'RAYS.RTSOSIS', 'MIKI', 4, 26000, '2017-06-11', 'F', 'T', 'F'),
+('017/MIKI/2017/06/11', 'RAYS.BKSAYAM', 'MIKI', 3, 19500, '2017-06-11', 'F', 'T', 'F'),
+('018/MIKI/2017/06/11', 'RAYS.RTABONAYAM', 'MIKI', 2, 15000, '2017-06-11', 'F', 'T', 'F'),
+('019/MIKI/2017/06/11', 'RAYS.RTPISCOKKEJ', 'MIKI', 3, 28000, '2017-06-11', 'F', 'T', 'F'),
+('020/MIKI/2017/06/11', 'RAYS.BLZEBRA', 'MIKI', 2, 15000, '2017-06-11', 'F', 'T', 'F'),
+('021/MIKI/2017/06/11', 'TITIK.MIEGOREN', 'MIKI', 17, 34000, '2017-06-11', 'F', 'T', 'F'),
+('022/MIKI/2017/06/11', 'TITIK.LPTJAGUNG', 'MIKI', 30, 60000, '2017-06-11', 'F', 'T', 'F'),
+('023/MIKI/2017/06/11', 'TITIK.BKWJAGUNG', 'MIKI', 15, 30000, '2017-06-11', 'F', 'T', 'F'),
+('024/MIKI/2017/06/11', 'YONATAN.NSGRTLR', 'MIKI', 15, 75000, '2017-06-11', 'F', 'T', 'F'),
+('025/MIKI/2017/06/11', 'YONATAN.NSRMS', 'MIKI', 13, 78000, '2017-06-11', 'F', 'T', 'F'),
+('026/MIKI/2017/06/11', 'MANNA.SSRAGUT', 'MIKI', 5, 50000, '2017-06-11', 'F', 'T', 'F'),
+('027/MIKI/2017/06/11', 'MANNA.SSFLA', 'MIKI', 7, 40000, '2017-06-11', 'F', 'T', 'F'),
+('028/MIKI/2017/06/11', 'MANNA.LEMPER', 'MIKI', 10, 55000, '2017-06-11', 'F', 'T', 'F'),
+('029/MIKI/2017/06/11', 'MANNA.SUSUCOKLAT', 'MIKI', 20, 120000, '2017-06-11', 'F', 'T', 'F'),
+('030/MIKI/2017/06/11', 'MANNA.SUSUSIRUP', 'MIKI', 15, 90000, '2017-06-11', 'F', 'T', 'F'),
+('031/MIKI/2017/06/11', 'MANNA.BLRAINBOW', 'MIKI', 8, 60000, '2017-06-11', 'F', 'T', 'F'),
+('032/MIKI/2017/06/11', 'MANNA.RTCOKLAT', 'MIKI', 9, 50000, '2017-06-11', 'F', 'T', 'F'),
+('033/MIKI/2017/06/11', 'MANNA.RTMANDARIN', 'MIKI', 5, 25000, '2017-06-11', 'F', 'T', 'F'),
+('034/MIKI/2017/06/11', 'MANNA.RTAYAM', 'MIKI', 5, 30000, '2017-06-11', 'F', 'T', 'F'),
+('035/MIKI/2017/06/11', 'MARLINA.EGGROLL', 'MIKI', 0, 0, '2017-06-11', 'F', 'T', 'F'),
+('037/MIKI/2017/06/11', 'GRACE.PDKECLI', 'MIKI', 3, 12000, '2017-06-11', 'F', 'T', 'T'),
+('038/MIKI/2017/06/11', 'RAYS.RTIPIZZA', 'MIKI', 2, 11000, '2017-06-11', 'F', 'T', 'T'),
+('039/MIKI/2017/06/11', 'RAYS.RTPISCOKKEJ', 'MIKI', 1, 6000, '2017-06-11', 'F', 'T', 'T'),
+('040/MIKI/2017/06/11', 'MANNA.SSRAGUT', 'MIKI', 5, 12000, '2017-06-11', 'F', 'T', 'T'),
+('041/MIKI/2017/06/11', 'MANNA.SSFLA', 'MIKI', 3, 10500, '2017-06-11', 'F', 'T', 'T'),
+('042/MIKI/2017/06/11', 'MANNA.BLRAINBOW', 'MIKI', 2, 11000, '2017-06-11', 'F', 'T', 'T'),
+('043/MIKI/2017/06/11', 'MANNA.RTCOKLAT', 'MIKI', 1, 4000, '2017-06-11', 'F', 'T', 'T'),
+('4/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('5/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 2, 5000, '2017-07-09', 'T', 'T', 'F'),
+('6/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 4, 10000, '2017-07-09', 'T', 'T', 'F'),
+('7/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('8/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('9/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('10/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 2, 4000, '2017-07-09', 'F', 'T', 'F'),
+('11/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('12/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 2, 5000, '2017-07-09', 'T', 'T', 'F'),
+('13/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 2, 4000, '2017-07-09', 'F', 'T', 'F'),
+('14/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('14/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 4, 8000, '2017-07-09', 'F', 'T', 'F'),
+('15/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('16/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('16/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('17/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 5, 10000, '2017-07-09', 'F', 'T', 'F'),
+('18/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('19/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('20/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('20/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('21/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('22/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('23/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('24/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('25/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 4, 8000, '2017-07-09', 'F', 'T', 'F'),
+('26/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 2, 4000, '2017-07-09', 'F', 'T', 'F'),
+('27/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('28/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 2, 4000, '2017-07-09', 'F', 'T', 'F'),
+('29/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('30/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('31/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('31/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('32/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('33/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('34/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('35/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('36/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 1, 3500, '2017-07-09', 'F', 'T', 'F'),
+('37/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('38/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('39/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('40/miki/2017/07/09', 'YONATAN.NSGRTLR', 'miki', 15, 75000, '2017-07-09', 'F', 'T', 'F'),
+('41/miki/2017/07/09', 'YONATAN.NSRMS', 'miki', 15, 90000, '2017-07-09', 'F', 'T', 'F'),
+('42/miki/2017/07/09', 'AMOS.PASTELBUNGA', 'miki', 8, 24000, '2017-07-09', 'F', 'T', 'F'),
+('43/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 2, 5000, '2017-07-09', 'T', 'T', 'F'),
+('44/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('45/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 4, 8000, '2017-07-09', 'F', 'T', 'F'),
+('46/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('47/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('48/miki/2017/07/09', 'YOUNGMAN.TEHMANIS', 'miki', 1, 2500, '2017-07-09', 'T', 'T', 'F'),
+('49/miki/2017/07/09', 'TITIK.LPTJAGUNG', 'miki', 1, 2000, '2017-07-09', 'F', 'T', 'F'),
+('49/miki/2017/07/09', 'TITIK.BKWJAGUNG', 'miki', 4, 8000, '2017-07-09', 'F', 'T', 'F'),
+('49/miki/2017/07/09', 'TITIK.MIEGOREN', 'miki', 5, 17500, '2017-07-09', 'F', 'T', 'F'),
+('50/miki/2017/07/09', 'JOVINA.SOSISKUAH', 'miki', 1, 23000, '2017-07-09', 'F', 'T', 'F'),
+('51/miki/2017/07/09', 'JOVINA.BACANG', 'miki', 36, 324000, '2017-07-09', 'F', 'T', 'F'),
+('52/miki/2017/07/09', 'JOVINA.BKSKAKAP', 'miki', 2, 46000, '2017-07-09', 'F', 'T', 'F'),
+('53/miki/2017/07/09', 'JOVINA.SPMANTEN', 'miki', 3, 69000, '2017-07-09', 'F', 'T', 'F'),
+('54/miki/2017/07/09', 'JOVINA.BKSGORENG', 'miki', 30, 180000, '2017-07-09', 'F', 'T', 'F'),
+('55/miki/2017/07/09', 'JOVINA.SIOMAY', 'miki', 20, 120000, '2017-07-09', 'F', 'T', 'F'),
+('56/miki/2017/07/09', 'RAYS.AYMPDS', 'miki', 3, 45000, '2017-07-09', 'F', 'T', 'F'),
+('57/miki/2017/07/09', 'RUDY.KRPKKENTANG', 'miki', 1, 12500, '2017-07-09', 'F', 'T', 'F'),
+('58/miki/2017/07/09', 'HADI.KEKYAN', 'miki', 0, 0, '2017-07-09', 'F', 'T', 'F'),
+('59/miki/2017/07/09', 'MANNA.SUSUCOKLAT', 'miki', 20, 120000, '2017-07-09', 'F', 'T', 'F'),
+('59/miki/2017/07/09', 'MANNA.ROTIBAKSO', 'miki', 3, 19500, '2017-07-09', 'F', 'T', 'F'),
+('59/miki/2017/07/09', 'MANNA.ROTIPISKEJ', 'miki', 4, 32000, '2017-07-09', 'F', 'T', 'F'),
+('59/miki/2017/07/09', 'MANNA.BLRAINBOW', 'miki', 5, 30000, '2017-07-09', 'F', 'T', 'F'),
+('59/miki/2017/07/09', 'MANNA.SSFLA', 'miki', 5, 20000, '2017-07-09', 'F', 'T', 'F'),
+('59/miki/2017/07/09', 'MANNA.SSRAGUT', 'miki', 5, 30000, '2017-07-09', 'F', 'T', 'F'),
+('60/miki/2017/07/09', 'MANNA.ROTIPISCOK', 'miki', 5, 35000, '2017-07-09', 'F', 'T', 'F'),
+('60/miki/2017/07/09', 'MANNA.SUSUSTRAWBERRY', 'miki', 10, 60000, '2017-07-09', 'F', 'T', 'F'),
+('61/miki/2017/07/09', 'LACY.CWIEMIE', 'miki', 3, 42000, '2017-07-09', 'F', 'T', 'F'),
+('62/miki/2017/07/09', 'SISKA.MOCOVO', 'miki', 13, 52000, '2017-07-09', 'F', 'T', 'F'),
+('63/miki/2017/07/09', 'SISKA.MAKKEJU', 'miki', 6, 162000, '2017-07-09', 'F', 'T', 'F'),
+('64/miki/2017/07/09', 'RUMI.KRPKTEMPE', 'miki', 4, 24000, '2017-07-09', 'F', 'T', 'F'),
+('1/MIKI/2017/08/03', 'ADI.KRPKBKR', 'MIKI', 5, 0, '2017-08-03', 'F', 'T', 'F'),
+('1/MIKI/2017/08/03', 'MARIA.NASI', 'MIKI', 10, 0, '2017-08-03', 'F', 'T', 'F'),
+('1/MIKI/2017/08/03', 'MARIA.MISOA', 'MIKI', 18, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'RAYS.RTSOSIS', 'MIKI', 2, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'RAYS.RTIPIZZA', 'MIKI', 3, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'RAYS.PISCOK', 'MIKI', 0, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'RAYS.RTPISCOKKEJ', 'MIKI', 2, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'RAYS.RTCHIFON', 'MIKI', 4, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'RAYS.BKSAYAM', 'MIKI', 2, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'RAYS.RTCOKLAT', 'MIKI', 2, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'JOVINA.BACANG', 'MIKI', 22, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'JOVINA.BKSGORENG', 'MIKI', 25, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'JOVINA.SIOMAY', 'MIKI', 20, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'JOVINA.SPMANTEN', 'MIKI', 3, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'JOVINA.SPSOSIS', 'MIKI', 1, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'TITIK.LPTJAGUNG', 'MIKI', 22, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'TITIK.MIEGOREN', 'MIKI', 15, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'TITIK.BKWJAGUNG', 'MIKI', 15, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'MANNA.SUSUCOKLAT', 'MIKI', 15, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'MANNA.SUSUSTRAWBERRY', 'MIKI', 10, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'MANNA.SSFLA', 'MIKI', 5, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'MANNA.SSRAGUT', 'MIKI', 5, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'MANNA.ROTIPISCOK', 'MIKI', 7, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'MANNA.RTKEJU', 'MIKI', 4, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'MANNA.RTCOKLAT', 'MIKI', 4, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'MANNA.RISOLES', 'MIKI', 5, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'LACY.NSLEMAK', 'MIKI', 9, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'LACY.CWIEMIE', 'MIKI', 5, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'KREMES.KREMES', 'MIKI', 2, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'SISKA.PDVANILA', 'MIKI', 5, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'SISKA.PDOREO', 'MIKI', 7, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'RUMI.KRPKTEMPE', 'MIKI', 3, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'YONATAN.NSGRTLR', 'MIKI', 15, 0, '2017-08-03', 'F', 'T', 'F'),
+('-/MIKI/2017/08/03', 'YONATAN.NSRMS', 'MIKI', 13, 0, '2017-08-03', 'F', 'T', 'F');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hargadagang`
+--
+
+DROP TABLE IF EXISTS `hargadagang`;
+CREATE TABLE IF NOT EXISTS `hargadagang` (
+  `iddagang` varchar(30) NOT NULL,
+  `hargahpp` int(11) NOT NULL,
+  `hargajual` int(11) NOT NULL,
+  `tglawal` date NOT NULL,
+  `tglakhir` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hargadagang`
+--
+
+INSERT INTO `hargadagang` (`iddagang`, `hargahpp`, `hargajual`, `tglawal`, `tglakhir`) VALUES
+('AMOS.RISOLES', 2000, 2500, '2017-06-11', '0000-00-00'),
+('GRACE.PDKECLI', 4000, 5000, '2017-06-11', '0000-00-00'),
+('GRACE.PDLOYANG', 27500, 30000, '2017-06-11', '0000-00-00'),
+('HADI.GALANTIN', 16000, 18000, '2017-06-11', '0000-00-00'),
+('JOVINA.BACANG', 8000, 9000, '2017-06-11', '0000-00-00'),
+('JOVINA.BKSGORENG', 5000, 6000, '2017-06-11', '0000-00-00'),
+('JOVINA.BKSKAKAP', 22000, 23000, '2017-06-11', '0000-00-00'),
+('JOVINA.SIOMAY', 5000, 6000, '2017-06-11', '0000-00-00'),
+('JOVINA.SPMANTEN', 22000, 23000, '2017-06-11', '0000-00-00'),
+('JOVINA.SPSOSIS', 22000, 23000, '2017-06-11', '2017-07-28'),
+('LACY.CWIEMIE', 13000, 14000, '2017-06-11', '0000-00-00'),
+('MANNA.BLRAINBOW', 5800, 6000, '2017-06-11', '0000-00-00'),
+('MANNA.LEMPER', 5000, 5500, '2017-06-11', '0000-00-00'),
+('MANNA.RTAYAM', 5200, 6000, '2017-06-11', '0000-00-00'),
+('MANNA.RTCOKLAT', 4000, 5000, '2017-06-11', '0000-00-00'),
+('MANNA.RTMANDARIN', 4000, 5000, '2017-06-11', '0000-00-00'),
+('MANNA.SSFLA', 3500, 4000, '2017-06-11', '0000-00-00'),
+('MANNA.SSRAGUT', 4000, 5000, '2017-06-11', '0000-00-00'),
+('MANNA.SUSUCOKLAT', 5700, 6000, '2017-06-11', '0000-00-00'),
+('MANNA.SUSUSIRUP', 5500, 6000, '2017-06-11', '0000-00-00'),
+('MARLINA.EGGROLL', 33000, 35000, '2017-06-11', '0000-00-00'),
+('MBANGSA.AMIDIS', 0, 3000, '2017-06-11', '0000-00-00'),
+('MBANGSA.MINUTEMAID', 0, 6500, '2017-06-11', '0000-00-00'),
+('MBANGSA.SIIPLAH', 0, 1000, '2017-06-11', '0000-00-00'),
+('RAYS.BKSAYAM', 5500, 6500, '2017-06-11', '0000-00-00'),
+('RAYS.BLZEBRA', 6500, 7500, '2017-06-11', '0000-00-00'),
+('RAYS.RTABONAYAM', 6500, 7500, '2017-06-11', '0000-00-00'),
+('RAYS.RTIPIZZA', 5500, 6500, '2017-06-11', '0000-00-00'),
+('RAYS.RTPISCOKKEJ', 6000, 7000, '2017-06-11', '0000-00-00'),
+('RAYS.RTSOSIS', 5500, 6500, '2017-06-11', '0000-00-00'),
+('RUDY.KRPKKENTANG', 11000, 12500, '2017-06-11', '0000-00-00'),
+('RUMI.KRPKTEMPE', 5000, 6000, '2017-06-11', '0000-00-00'),
+('TITIK.BKWJAGUNG', 1500, 2000, '2017-06-11', '0000-00-00'),
+('TITIK.LPTJAGUNG', 1500, 2000, '2017-06-11', '0000-00-00'),
+('TITIK.MIEGOREN', 3000, 3500, '2017-06-11', '0000-00-00'),
+('YONATAN.NSGRTLR', 4000, 5000, '2017-06-11', '0000-00-00'),
+('YONATAN.NSRMS', 5000, 6000, '2017-06-11', '0000-00-00'),
+('YOS.EMPING', 10000, 11000, '2017-06-11', '0000-00-00'),
+('YOUNGMAN.TEHMANIS', 0, 2000, '2017-07-08', '2017-07-08'),
+('AMOS.PASTELBUNGA', 2500, 3000, '2017-06-11', '0000-00-00'),
+('MANNA.ROTIBAKSO', 6000, 6500, '2017-06-11', '0000-00-00'),
+('MANNA.ROTIPISKEJ', 7000, 8000, '2017-06-11', '0000-00-00'),
+('MANNA.SUSUSTRAWBERRY', 5500, 6000, '2017-06-11', '0000-00-00'),
+('YOUNGMAN.TEHMANIS', 0, 2500, '2017-07-09', '0000-00-00'),
+('JOVINA.SOSISKUAH', 20000, 23000, '2017-07-09', '0000-00-00'),
+('RAYS.AYMPDS', 13500, 15000, '2017-07-09', '0000-00-00'),
+('HADI.KEKYAN', 15000, 17000, '2017-07-09', '0000-00-00'),
+('SISKA.MAKKEJU', 25000, 27000, '2017-07-09', '0000-00-00'),
+('SISKA.MOCOVO', 3500, 4000, '2017-07-09', '0000-00-00'),
+('MANNA.ROTIPISCOK', 6500, 7000, '2017-07-09', '0000-00-00'),
+('RAYS.PISCOK', 5500, 7000, '2017-07-30', '0000-00-00'),
+('RAYS.RTCHIFON', 6500, 7500, '2017-07-30', '0000-00-00'),
+('RAYS.RTCOKLAT', 4500, 5500, '2017-07-30', '0000-00-00'),
+('JOVINA.SPSOSIS', 20000, 23000, '2017-07-29', '0000-00-00'),
+('MANNA.RTKEJU', 5000, 6000, '2017-07-30', '0000-00-00'),
+('MANNA.RISOLES', 5000, 5500, '2017-07-30', '0000-00-00'),
+('LACY.NSLEMAK', 7500, 8000, '2017-07-30', '0000-00-00'),
+('SISKA.PDVANILA', 3000, 3500, '2017-07-30', '0000-00-00'),
+('SISKA.PDOREO', 3500, 4000, '2017-07-30', '0000-00-00'),
+('KREMES.KREMES', 18000, 20000, '2017-07-30', '0000-00-00'),
+('MARIA.NASI', 6500, 7000, '2017-07-30', '0000-00-00'),
+('MARIA.MISOA', 1500, 2000, '2017-07-30', '0000-00-00'),
+('ADI.KRPKBKR', 2000, 2500, '2017-07-30', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rekapkof`
+--
+
+DROP TABLE IF EXISTS `rekapkof`;
+CREATE TABLE IF NOT EXISTS `rekapkof` (
+  `komsel` varchar(15) NOT NULL,
+  `tanggal` date NOT NULL,
+  `totalhpp` int(11) NOT NULL,
+  `totaljual` int(11) NOT NULL,
+  `laba` int(11) NOT NULL,
+  `totaldiskon` int(11) NOT NULL,
+  `totalpok` int(11) NOT NULL,
+  `biayalain` int(11) NOT NULL,
+  `lababersih` int(11) NOT NULL,
+  `nobukti` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rekapkof`
+--
+
+INSERT INTO `rekapkof` (`komsel`, `tanggal`, `totalhpp`, `totaljual`, `laba`, `totaldiskon`, `totalpok`, `biayalain`, `lababersih`, `nobukti`) VALUES
+('YOUNGMAN', '2017-06-11', 1639900, 1889000, 249100, 164800, 67100, 6100, 407800, '1/YOUNGMAN/2017-06-11'),
+('YOUNGMAN', '2017-07-09', 1546500, 1760500, 214000, 163000, 0, 0, 377000, '3/YOUNGMAN/2017-07-09'),
+('YOUNGMAN', '2017-08-03', 1407500, 1619500, 212000, 129950, 0, 0, 341950, '4/YOUNGMAN/2017-08-03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rekapkomsel`
+--
+
+DROP TABLE IF EXISTS `rekapkomsel`;
+CREATE TABLE IF NOT EXISTS `rekapkomsel` (
+  `komsel` varchar(25) NOT NULL,
+  `tanggal` date NOT NULL,
+  `totalqty` int(11) NOT NULL,
+  `totalpenjualan` int(11) NOT NULL,
+  `noinvoice` varchar(50) NOT NULL,
+  `pengeluaran` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rekapsuplier`
+--
+
+DROP TABLE IF EXISTS `rekapsuplier`;
+CREATE TABLE IF NOT EXISTS `rekapsuplier` (
+  `noinvoice` varchar(25) NOT NULL,
+  `idsupp` varchar(25) NOT NULL,
+  `totalhpp` int(11) NOT NULL,
+  `diskon` int(11) NOT NULL,
+  `totalhppnet` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `print` varchar(1) NOT NULL,
+  `rekapkof` varchar(1) NOT NULL,
+  `nobukti` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rekapsuplier`
+--
+
+INSERT INTO `rekapsuplier` (`noinvoice`, `idsupp`, `totalhpp`, `diskon`, `totalhppnet`, `tanggal`, `print`, `rekapkof`, `nobukti`) VALUES
+('1/KOF/2017-06-11', 'AMOS', 20000, 0, 20000, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('10/KOF/2017-06-11', 'RUMI', 20000, 0, 20000, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('11/KOF/2017-06-11', 'TITIK', 118500, 0, 118500, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('12/KOF/2017-06-11', 'YONATAN', 125000, 0, 125000, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('13/KOF/2017-06-11', 'YOS', 0, 0, 0, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('17/KOF/2017-07-09', 'JOVINA', 668000, 100200, 567800, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('18/KOF/2017-07-09', 'RAYS', 40500, 0, 40500, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('19/KOF/2017-07-09', 'RUDY', 11000, 0, 11000, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('2/KOF/2017-06-11', 'GRACE', 127500, 0, 127500, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('20/KOF/2017-07-09', 'AMOS', 20000, 0, 20000, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('21/KOF/2017-07-09', 'HADI', 0, 0, 0, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('22/KOF/2017-07-09', 'TITIK', 103500, 0, 103500, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('23/KOF/2017-07-09', 'YONATAN', 135000, 0, 135000, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('24/KOF/2017-07-09', 'MANNA', 314000, 62800, 251200, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('25/KOF/2017-07-09', 'LACY', 39000, 0, 39000, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('26/KOF/2017-07-09', 'SISKA', 195500, 0, 195500, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('27/KOF/2017-07-09', 'RUMI', 20000, 0, 20000, '2017-07-09', 'F', 'T', '3/YOUNGMAN/2017-07-09'),
+('28/KOF/2017-08-03', 'ADI', 10000, 0, 10000, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('3/KOF/2017-06-11', 'HADI', 64000, 0, 64000, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('30/KOF/2017-08-03', 'JOVINA', 487000, 73050, 413950, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('31/KOF/2017-08-03', 'KREMES', 36000, 0, 36000, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('32/KOF/2017-08-03', 'LACY', 132500, 0, 132500, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('33/KOF/2017-08-03', 'MANNA', 284500, 56900, 227600, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('34/KOF/2017-08-03', 'MARIA', 92000, 0, 92000, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('35/KOF/2017-08-03', 'RAYS', 85500, 0, 85500, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('36/KOF/2017-08-03', 'RUMI', 15000, 0, 15000, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('37/KOF/2017-08-03', 'SISKA', 39500, 0, 39500, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('38/KOF/2017-08-03', 'TITIK', 100500, 0, 100500, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('39/KOF/2017-08-03', 'YONATAN', 125000, 0, 125000, '2017-08-03', 'F', 'T', '4/YOUNGMAN/2017-08-03'),
+('4/KOF/2017-06-11', 'JOVINA', 478000, 71700, 406300, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('5/KOF/2017-06-11', 'LACY', 156000, 0, 156000, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('6/KOF/2017-06-11', 'MANNA', 465500, 93100, 372400, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('7/KOF/2017-06-11', 'MARLINA', 0, 0, 0, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('8/KOF/2017-06-11', 'RAYS', 110500, 0, 110500, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11'),
+('9/KOF/2017-06-11', 'RUDY', 22000, 0, 22000, '2017-06-11', 'F', 'T', '1/YOUNGMAN/2017-06-11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplier`
+--
+
+DROP TABLE IF EXISTS `supplier`;
+CREATE TABLE IF NOT EXISTS `supplier` (
+  `idsupp` varchar(15) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `notelp` varchar(15) NOT NULL,
+  `nowa` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`idsupp`, `nama`, `alamat`, `notelp`, `nowa`) VALUES
+('ADI', 'ADI', '-', '-', '-'),
+('AMOS', 'AMOS', '-', '-', '-'),
+('GRACE', 'GRACE', '-', '-', '-'),
+('HADI', 'HADI', '-', '-', '-'),
+('JOVINA', 'JOVINA', '-', '-', '-'),
+('KREMES', 'NN KREMES', '-', '-', '-'),
+('LACY', 'LACY', '-', '-', '-'),
+('MANNA', 'MANNA', '-', '-', '-'),
+('MARIA', 'MARIA', 'YOSAFAT', '-', '-'),
+('MARLINA', 'MARLINA', '-', '-', '-'),
+('MBANGSA', 'MENARA BANGSA', '-', '-', '-'),
+('RAYS', 'RAYS', '-', '-', '-'),
+('RUDY', 'RUDY', '-', '-', '-'),
+('RUMI', 'RUMI', '-', '-', '-'),
+('SISKA', 'SISKA', '-', '-', '-'),
+('TITIK', 'TITIK', '-', '-', '-'),
+('YONATAN', 'YONATAN', '-', '-', '-'),
+('YOS', 'YOS', '-', '-', '-'),
+('YOUNGMAN', 'KOMSEL YOUNGMAN', '-', '-', '-');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaksi`
+--
+
+DROP TABLE IF EXISTS `transaksi`;
+CREATE TABLE IF NOT EXISTS `transaksi` (
+  `idsupp` varchar(25) NOT NULL,
+  `iddagang` varchar(30) NOT NULL,
+  `tanggal` date NOT NULL,
+  `stokawal` int(11) NOT NULL,
+  `pok` int(11) DEFAULT NULL,
+  `stokjual` int(11) NOT NULL,
+  `stokakhir` int(11) NOT NULL,
+  `hargahpp` int(11) DEFAULT NULL,
+  `hargajual` int(11) DEFAULT NULL,
+  `totalhpp` int(11) DEFAULT NULL,
+  `totaljual` int(11) DEFAULT NULL,
+  `rekap` varchar(1) NOT NULL,
+  `noinvoice` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`idsupp`, `iddagang`, `tanggal`, `stokawal`, `pok`, `stokjual`, `stokakhir`, `hargahpp`, `hargajual`, `totalhpp`, `totaljual`, `rekap`, `noinvoice`) VALUES
+('ADI', 'ADI.KRPKBKR', '2017-08-03', 15, 0, 5, 10, 2000, 2500, 10000, 12500, 'R', '28/KOF/2017-08-03'),
+('AMOS', 'AMOS.PASTELBUNGA', '2017-07-09', 10, 0, 8, 2, 2500, 3000, 20000, 24000, 'R', '20/KOF/2017-07-09'),
+('AMOS', 'AMOS.RISOLES', '2017-06-11', 10, 0, 10, 0, 2000, 2500, 20000, 25000, 'R', '1/KOF/2017-06-11'),
+('GRACE', 'GRACE.PDKECLI', '2017-06-11', 26, 3, 22, 1, 4000, 5000, 100000, 125000, 'R', '2/KOF/2017-06-11'),
+('GRACE', 'GRACE.PDLOYANG', '2017-06-11', 4, 0, 1, 3, 27500, 30000, 27500, 30000, 'R', '2/KOF/2017-06-11'),
+('HADI', 'HADI.GALANTIN', '2017-06-11', 4, 0, 4, 0, 16000, 18000, 64000, 72000, 'R', '3/KOF/2017-06-11'),
+('HADI', 'HADI.KEKYAN', '2017-07-09', 7, 0, 0, 7, 15000, 17000, 0, 0, 'R', '21/KOF/2017-07-09'),
+('JOVINA', 'JOVINA.BACANG', '2017-06-11', 16, 0, 16, 0, 8000, 9000, 128000, 144000, 'R', '4/KOF/2017-06-11'),
+('JOVINA', 'JOVINA.BACANG', '2017-07-09', 40, 0, 36, 4, 8000, 9000, 288000, 324000, 'R', '17/KOF/2017-07-09'),
+('JOVINA', 'JOVINA.BACANG', '2017-08-03', 22, 0, 22, 0, 8000, 9000, 176000, 198000, 'R', '30/KOF/2017-08-03'),
+('JOVINA', 'JOVINA.BKSGORENG', '2017-06-11', 28, 0, 28, 0, 5000, 6000, 140000, 168000, 'R', '4/KOF/2017-06-11'),
+('JOVINA', 'JOVINA.BKSGORENG', '2017-07-09', 30, 0, 30, 0, 5000, 6000, 150000, 180000, 'R', '17/KOF/2017-07-09'),
+('JOVINA', 'JOVINA.BKSGORENG', '2017-08-03', 25, 0, 25, 0, 5000, 6000, 125000, 150000, 'R', '30/KOF/2017-08-03'),
+('JOVINA', 'JOVINA.BKSKAKAP', '2017-06-11', 1, 0, 1, 0, 22000, 23000, 22000, 23000, 'R', '4/KOF/2017-06-11'),
+('JOVINA', 'JOVINA.BKSKAKAP', '2017-07-09', 2, 0, 2, 0, 22000, 23000, 44000, 46000, 'R', '17/KOF/2017-07-09'),
+('JOVINA', 'JOVINA.SIOMAY', '2017-06-11', 20, 0, 20, 0, 5000, 6000, 100000, 120000, 'R', '4/KOF/2017-06-11'),
+('JOVINA', 'JOVINA.SIOMAY', '2017-07-09', 20, 0, 20, 0, 5000, 6000, 100000, 120000, 'R', '17/KOF/2017-07-09'),
+('JOVINA', 'JOVINA.SIOMAY', '2017-08-03', 20, 0, 20, 0, 5000, 6000, 100000, 120000, 'R', '30/KOF/2017-08-03'),
+('JOVINA', 'JOVINA.SOSISKUAH', '2017-07-09', 1, 0, 1, 0, 20000, 23000, 20000, 23000, 'R', '17/KOF/2017-07-09'),
+('JOVINA', 'JOVINA.SPMANTEN', '2017-06-11', 3, 0, 3, 0, 22000, 23000, 66000, 69000, 'R', '4/KOF/2017-06-11'),
+('JOVINA', 'JOVINA.SPMANTEN', '2017-07-09', 3, 0, 3, 0, 22000, 23000, 66000, 69000, 'R', '17/KOF/2017-07-09'),
+('JOVINA', 'JOVINA.SPMANTEN', '2017-08-03', 3, 0, 3, 0, 22000, 23000, 66000, 69000, 'R', '30/KOF/2017-08-03'),
+('JOVINA', 'JOVINA.SPSOSIS', '2017-06-11', 1, 0, 1, 0, 22000, 23000, 22000, 23000, 'R', '4/KOF/2017-06-11'),
+('JOVINA', 'JOVINA.SPSOSIS', '2017-08-03', 1, 0, 1, 0, 20000, 23000, 20000, 23000, 'R', '30/KOF/2017-08-03'),
+('KREMES', 'KREMES.KREMES', '2017-08-03', 3, 0, 2, 1, 18000, 20000, 36000, 40000, 'R', '31/KOF/2017-08-03'),
+('LACY', 'LACY.CWIEMIE', '2017-06-11', 12, 0, 12, 0, 13000, 14000, 156000, 168000, 'R', '5/KOF/2017-06-11'),
+('LACY', 'LACY.CWIEMIE', '2017-07-09', 15, 0, 3, 12, 13000, 14000, 39000, 42000, 'R', '25/KOF/2017-07-09'),
+('LACY', 'LACY.CWIEMIE', '2017-08-03', 5, 0, 5, 0, 13000, 14000, 65000, 70000, 'R', '32/KOF/2017-08-03'),
+('LACY', 'LACY.NSLEMAK', '2017-08-03', 10, 0, 9, 1, 7500, 8000, 67500, 72000, 'R', '32/KOF/2017-08-03'),
+('MANNA', 'MANNA.BLRAINBOW', '2017-06-11', 10, 2, 8, 0, 5800, 6000, 58000, 60000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.BLRAINBOW', '2017-07-09', 5, 0, 5, 0, 5800, 6000, 29000, 30000, 'R', '24/KOF/2017-07-09'),
+('MANNA', 'MANNA.LEMPER', '2017-06-11', 10, 0, 10, 0, 5000, 5500, 50000, 55000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.RISOLES', '2017-08-03', 5, 0, 5, 0, 5000, 5500, 25000, 27500, 'R', '33/KOF/2017-08-03'),
+('MANNA', 'MANNA.ROTIBAKSO', '2017-07-09', 5, 0, 3, 2, 6000, 6500, 18000, 19500, 'R', '24/KOF/2017-07-09'),
+('MANNA', 'MANNA.ROTIPISCOK', '2017-07-09', 5, 0, 5, 0, 6500, 7000, 32500, 35000, 'R', '24/KOF/2017-07-09'),
+('MANNA', 'MANNA.ROTIPISCOK', '2017-08-03', 7, 0, 7, 0, 6500, 7000, 45500, 49000, 'R', '33/KOF/2017-08-03'),
+('MANNA', 'MANNA.ROTIPISKEJ', '2017-07-09', 5, 0, 4, 1, 7000, 8000, 28000, 32000, 'R', '24/KOF/2017-07-09'),
+('MANNA', 'MANNA.RTAYAM', '2017-06-11', 5, 0, 5, 0, 5200, 6000, 26000, 30000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.RTCOKLAT', '2017-06-11', 10, 1, 9, 0, 4000, 5000, 40000, 50000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.RTCOKLAT', '2017-08-03', 4, 0, 4, 0, 4000, 5000, 16000, 20000, 'R', '33/KOF/2017-08-03'),
+('MANNA', 'MANNA.RTKEJU', '2017-08-03', 4, 0, 4, 0, 5000, 6000, 20000, 24000, 'R', '33/KOF/2017-08-03'),
+('MANNA', 'MANNA.RTMANDARIN', '2017-06-11', 5, 0, 5, 0, 4000, 5000, 20000, 25000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.SSFLA', '2017-06-11', 10, 3, 7, 0, 3500, 4000, 35000, 40000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.SSFLA', '2017-07-09', 5, 0, 5, 0, 3500, 4000, 17500, 20000, 'R', '24/KOF/2017-07-09'),
+('MANNA', 'MANNA.SSFLA', '2017-08-03', 5, 0, 5, 0, 3500, 4000, 17500, 20000, 'R', '33/KOF/2017-08-03'),
+('MANNA', 'MANNA.SSRAGUT', '2017-06-11', 10, 3, 7, 0, 4000, 5000, 40000, 50000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.SSRAGUT', '2017-07-09', 5, 0, 5, 0, 4000, 5000, 20000, 25000, 'R', '24/KOF/2017-07-09'),
+('MANNA', 'MANNA.SSRAGUT', '2017-08-03', 5, 0, 5, 0, 4000, 5000, 20000, 25000, 'R', '33/KOF/2017-08-03'),
+('MANNA', 'MANNA.SUSUCOKLAT', '2017-06-11', 20, 0, 20, 0, 5700, 6000, 114000, 120000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.SUSUCOKLAT', '2017-07-09', 20, 0, 20, 0, 5700, 6000, 114000, 120000, 'R', '24/KOF/2017-07-09'),
+('MANNA', 'MANNA.SUSUCOKLAT', '2017-08-03', 15, 0, 15, 0, 5700, 6000, 85500, 90000, 'R', '33/KOF/2017-08-03'),
+('MANNA', 'MANNA.SUSUSIRUP', '2017-06-11', 15, 0, 15, 0, 5500, 6000, 82500, 90000, 'R', '6/KOF/2017-06-11'),
+('MANNA', 'MANNA.SUSUSTRAWBERRY', '2017-07-09', 10, 0, 10, 0, 5500, 6000, 55000, 60000, 'R', '24/KOF/2017-07-09'),
+('MANNA', 'MANNA.SUSUSTRAWBERRY', '2017-08-03', 10, 0, 10, 0, 5500, 6000, 55000, 60000, 'R', '33/KOF/2017-08-03'),
+('MARIA', 'MARIA.MISOA', '2017-08-03', 20, 0, 18, 2, 1500, 2000, 27000, 36000, 'R', '34/KOF/2017-08-03'),
+('MARIA', 'MARIA.NASI', '2017-08-03', 20, 0, 10, 10, 6500, 7000, 65000, 70000, 'R', '34/KOF/2017-08-03'),
+('MARLINA', 'MARLINA.EGGROLL', '2017-06-11', 2, 0, 0, 2, 33000, 35000, 0, 0, 'R', '7/KOF/2017-06-11'),
+('RAYS', 'RAYS.AYMPDS', '2017-07-09', 10, 0, 3, 7, 13500, 15000, 40500, 45000, 'R', '18/KOF/2017-07-09'),
+('RAYS', 'RAYS.BKSAYAM', '2017-06-11', 4, 0, 3, 1, 5500, 6500, 16500, 19500, 'R', '8/KOF/2017-06-11'),
+('RAYS', 'RAYS.BKSAYAM', '2017-08-03', 4, 0, 2, 2, 5500, 6500, 11000, 13000, 'R', '35/KOF/2017-08-03'),
+('RAYS', 'RAYS.BLZEBRA', '2017-06-11', 2, 0, 2, 0, 6500, 7500, 13000, 15000, 'R', '8/KOF/2017-06-11'),
+('RAYS', 'RAYS.PISCOK', '2017-08-03', 4, 0, 0, 4, 5500, 7000, 0, 0, 'R', '35/KOF/2017-08-03'),
+('RAYS', 'RAYS.RTABONAYAM', '2017-06-11', 2, 0, 2, 0, 6500, 7500, 13000, 15000, 'R', '8/KOF/2017-06-11'),
+('RAYS', 'RAYS.RTCHIFON', '2017-08-03', 4, 0, 4, 0, 6500, 7500, 26000, 30000, 'R', '35/KOF/2017-08-03'),
+('RAYS', 'RAYS.RTCOKLAT', '2017-08-03', 4, 0, 2, 2, 4500, 5500, 9000, 11000, 'R', '35/KOF/2017-08-03'),
+('RAYS', 'RAYS.RTIPIZZA', '2017-06-11', 4, 2, 2, 0, 5500, 6500, 22000, 26000, 'R', '8/KOF/2017-06-11'),
+('RAYS', 'RAYS.RTIPIZZA', '2017-08-03', 3, 0, 3, 0, 5500, 6500, 16500, 19500, 'R', '35/KOF/2017-08-03'),
+('RAYS', 'RAYS.RTPISCOKKEJ', '2017-06-11', 4, 1, 3, 0, 6000, 7000, 24000, 28000, 'R', '8/KOF/2017-06-11'),
+('RAYS', 'RAYS.RTPISCOKKEJ', '2017-08-03', 4, 0, 2, 2, 6000, 7000, 12000, 14000, 'R', '35/KOF/2017-08-03'),
+('RAYS', 'RAYS.RTSOSIS', '2017-06-11', 4, 0, 4, 0, 5500, 6500, 22000, 26000, 'R', '8/KOF/2017-06-11'),
+('RAYS', 'RAYS.RTSOSIS', '2017-08-03', 3, 0, 2, 1, 5500, 6500, 11000, 13000, 'R', '35/KOF/2017-08-03'),
+('RUDY', 'RUDY.KRPKKENTANG', '2017-06-11', 10, 0, 2, 8, 11000, 12500, 22000, 25000, 'R', '9/KOF/2017-06-11'),
+('RUDY', 'RUDY.KRPKKENTANG', '2017-07-09', 8, 0, 1, 7, 11000, 12500, 11000, 12500, 'R', '19/KOF/2017-07-09'),
+('RUMI', 'RUMI.KRPKTEMPE', '2017-06-11', 5, 0, 4, 1, 5000, 6000, 20000, 24000, 'R', '10/KOF/2017-06-11'),
+('RUMI', 'RUMI.KRPKTEMPE', '2017-07-09', 5, 0, 4, 1, 5000, 6000, 20000, 24000, 'R', '27/KOF/2017-07-09'),
+('RUMI', 'RUMI.KRPKTEMPE', '2017-08-03', 6, 0, 3, 3, 5000, 6000, 15000, 18000, 'R', '36/KOF/2017-08-03'),
+('SISKA', 'SISKA.MAKKEJU', '2017-07-09', 10, 0, 6, 4, 25000, 27000, 150000, 162000, 'R', '26/KOF/2017-07-09'),
+('SISKA', 'SISKA.MOCOVO', '2017-07-09', 15, 0, 13, 2, 3500, 4000, 45500, 52000, 'R', '26/KOF/2017-07-09'),
+('SISKA', 'SISKA.PDOREO', '2017-08-03', 7, 0, 7, 0, 3500, 4000, 24500, 28000, 'R', '37/KOF/2017-08-03'),
+('SISKA', 'SISKA.PDVANILA', '2017-08-03', 6, 0, 5, 1, 3000, 3500, 15000, 17500, 'R', '37/KOF/2017-08-03'),
+('TITIK', 'TITIK.BKWJAGUNG', '2017-06-11', 15, 0, 15, 0, 1500, 2000, 22500, 30000, 'R', '11/KOF/2017-06-11'),
+('TITIK', 'TITIK.BKWJAGUNG', '2017-07-09', 15, 0, 14, 1, 1500, 2000, 21000, 28000, 'R', '22/KOF/2017-07-09'),
+('TITIK', 'TITIK.BKWJAGUNG', '2017-08-03', 15, 0, 15, 0, 1500, 2000, 22500, 30000, 'R', '38/KOF/2017-08-03'),
+('TITIK', 'TITIK.LPTJAGUNG', '2017-06-11', 30, 0, 30, 0, 1500, 2000, 45000, 60000, 'R', '11/KOF/2017-06-11'),
+('TITIK', 'TITIK.LPTJAGUNG', '2017-07-09', 25, 0, 25, 0, 1500, 2000, 37500, 50000, 'R', '22/KOF/2017-07-09'),
+('TITIK', 'TITIK.LPTJAGUNG', '2017-08-03', 25, 0, 22, 3, 1500, 2000, 33000, 44000, 'R', '38/KOF/2017-08-03'),
+('TITIK', 'TITIK.MIEGOREN', '2017-06-11', 21, 0, 17, 4, 3000, 3500, 51000, 59500, 'R', '11/KOF/2017-06-11'),
+('TITIK', 'TITIK.MIEGOREN', '2017-07-09', 21, 0, 15, 6, 3000, 3500, 45000, 52500, 'R', '22/KOF/2017-07-09'),
+('TITIK', 'TITIK.MIEGOREN', '2017-08-03', 16, 0, 15, 1, 3000, 3500, 45000, 52500, 'R', '38/KOF/2017-08-03'),
+('YONATAN', 'YONATAN.NSGRTLR', '2017-06-11', 15, 0, 15, 0, 4000, 5000, 60000, 75000, 'R', '12/KOF/2017-06-11'),
+('YONATAN', 'YONATAN.NSGRTLR', '2017-07-09', 15, 0, 15, 0, 4000, 5000, 60000, 75000, 'R', '23/KOF/2017-07-09'),
+('YONATAN', 'YONATAN.NSGRTLR', '2017-08-03', 15, 0, 15, 0, 4000, 5000, 60000, 75000, 'R', '39/KOF/2017-08-03'),
+('YONATAN', 'YONATAN.NSRMS', '2017-06-11', 15, 0, 13, 2, 5000, 6000, 65000, 78000, 'R', '12/KOF/2017-06-11'),
+('YONATAN', 'YONATAN.NSRMS', '2017-07-09', 15, 0, 15, 0, 5000, 6000, 75000, 90000, 'R', '23/KOF/2017-07-09'),
+('YONATAN', 'YONATAN.NSRMS', '2017-08-03', 15, 0, 13, 2, 5000, 6000, 65000, 78000, 'R', '39/KOF/2017-08-03'),
+('YOS', 'YOS.EMPING', '2017-06-11', 10, 0, 0, 10, 10000, 11000, 0, 0, 'R', '13/KOF/2017-06-11'),
+('YOUNGMAN', 'YOUNGMAN.TEHMANIS', '2017-07-09', 0, 0, 25, 25, 0, 2500, 0, 62500, 'R', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `nama` varchar(30) NOT NULL,
+  `password` varchar(35) NOT NULL,
+  `nohp` varchar(15) NOT NULL,
+  `nowa` varchar(15) NOT NULL,
+  `komsel` varchar(15) NOT NULL,
+  `role` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`nama`, `password`, `nohp`, `nowa`, `komsel`, `role`) VALUES
+('amel', 'da0e22de18e3fbe1e96bdc882b912ea4', '08118447777', '08118447777', 'KITA', 'admin'),
+('miki', '4839641470743161315c2daed44ff32c', '085743013757', '085743013757', 'YOUNGMAN', 'admin'),
+('shellie', '32c08878fa179d69163f192974dd83bd', '085701484866', '085701484866', 'YOUNGMAN', 'admin'),
+('tika', 'c27cd12c8034c739304c22a3a3748e39', '0', '085742237454', 'YOUNGMAN', 'admin'),
+('timo', '3373c81c685536ee89ebcb4369d95c5f', '085641965267', '085641965267', 'KISS', 'admin');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `counter`
+--
+ALTER TABLE `counter`
+ ADD PRIMARY KEY (`invoice`);
+
+--
+-- Indexes for table `dagangan`
+--
+ALTER TABLE `dagangan`
+ ADD PRIMARY KEY (`iddagang`);
+
+--
+-- Indexes for table `rekapkof`
+--
+ALTER TABLE `rekapkof`
+ ADD PRIMARY KEY (`nobukti`);
+
+--
+-- Indexes for table `rekapsuplier`
+--
+ALTER TABLE `rekapsuplier`
+ ADD PRIMARY KEY (`noinvoice`);
+
+--
+-- Indexes for table `supplier`
+--
+ALTER TABLE `supplier`
+ ADD PRIMARY KEY (`idsupp`);
+
+--
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
+ ADD UNIQUE KEY `iddagang_2` (`iddagang`,`tanggal`), ADD KEY `iddagang` (`iddagang`,`tanggal`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`nama`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
